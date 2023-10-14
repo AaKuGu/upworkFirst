@@ -2,26 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+::-webkit-scrollbar {
+  width: 1px; /* Set the desired width */
+  height : 10px;
+  border-radius: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Customize the track (the area the scrollbar moves on) */
+::-webkit-scrollbar-track {
+  background: blue; /* You can change the background color */
+  height : 2px;
+  border-radius: 10px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Customize the thumb (the draggable scrollbar handle) */
+::-webkit-scrollbar-thumb {
+  background: green; /* You can change the thumb color */
+  width: 2px;
+  height : 2px;
+  border-radius: 10px;
 }

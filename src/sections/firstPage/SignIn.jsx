@@ -1,13 +1,19 @@
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
+import { LiaSignOutAltSolid } from "react-icons/lia";
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 
 const SignIn = ({}) => {
   const [emailOrPhone, setEmailOrPhone] = useState("email");
   console.log("🚀 ~ file: SignIn.jsx:7 ~ SignIn ~ emailOrPhone:", emailOrPhone);
+
+  // styles
+
+  const emailOrPhoneNumberStyles = `px-5 py-2 w-[200px] text-purple-700 border-2 border-b-2 shadow-lg border-white font-bold rounded-lg hover:bg-gray-200 flex items-center justify-center gap-3`;
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -33,9 +39,9 @@ const SignIn = ({}) => {
 
   const initialValues = {
     // password: "",
-    password: "sjkejw3483jj",
+    password: "",
     // email: "",
-    email: "pratham29@gmail.com",
+    email: "",
     phoneNumber: "",
   };
 
@@ -44,7 +50,6 @@ const SignIn = ({}) => {
       emailOrPhone === "email" &&
       Yup.string()
         .required("email is required")
-        .email()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           "Invalid email format"
@@ -76,7 +81,7 @@ const SignIn = ({}) => {
   //     password: Yup.string().required("Password is required"),
   //   });
 
-  const onSubmit = (values) => {
+  const onSubmit = (values, { resetForm }) => {
     // alert("submit is ruuning")
 
     console.log("🚀 ~ file: SignIn.jsx:30 ~ onSubmit ~ values:", values);
@@ -171,79 +176,123 @@ const SignIn = ({}) => {
       //   });
       //   // console.log("🚀 ~ file: SignIn.jsx:147 ~ user ~ user:", user);
       // }
+
+      resetForm();
     });
   };
 
   return (
-    <div className="w-[400px] border-[1px] border-gray-400 h-auto p-5  gap-5 flex items-center justify-center flex-col  ">
+    <div className="w-[60%] h-[450px] flex items-center justify-center  rounded-lg shadow-lg shadow-purple-300 border-[2px] border-gray-300 overflow-hidden  ">
+      {/* // left side */}
       <div
-        aria-label="header"
-        className={`${""} font-bold text-3xl text-center`}
+        aria-label="left side"
+        className={`${""} w-[50%] h-full flex items-center justify-center gap-5 flex-col `}
       >
-        Sign In
-      </div>
-
-      {/* //choose between email or phone */}
-      <div
-        aria-label="choose email or phone number for login"
-        className={`${""} w-full h-auto flex items-center justify-center gap-5 py-2 `}
-      >
-        <button
-          role="email option"
-          className={`${""} border-2 px-5 py-2 w-[170px]`}
-          onClick={() => setEmailOrPhone("email")}
+        <div
+          aria-label="header"
+          className={`${""} font-bold text-5xl text-center text-black flex items-center justify-center gap-4 `}
+          // style={{ textShadow: "2px 2px 4px blue" }}
         >
-          Email{" "}
-        </button>
-        <button
-          role="phone number"
-          className={`${""} border-2 px-5 py-2 w-[170px]`}
-          onClick={() => setEmailOrPhone("phone")}
-        >
-          Phone Number
-        </button>
-      </div>
+          Sign In
+        </div>
 
-      {/* //actual form */}
-      <div
-        aria-label="form container"
-        className={`${""} w-full h-auto flex items-center justify-center gap-5 py-2 flex-col`}
-      >
-        <Formik
-          onSubmit={onSubmit}
-          validationSchema={validationSchema}
-          initialValues={initialValues}
+        {/* //choose between email or phone */}
+        <div
+          aria-label="choose email or phone number for login"
+          className={`${""} w-full h-auto flex items-center justify-center gap-5 py-2 flex-col`}
         >
-          <Form className="flex flex-col items-start justify-center gap-5 text-xl font-bold">
-            {emailOrPhone === "email" && (
-              <div className="email">
-                <label htmlFor="email">Email : </label>
-                <Field
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="@apply px-5 py-1 rounded-lg outline-none border-b-2 cursor-default "
-                  placeholder="example@example.com"
-                />
-                <ErrorMessage name="email" />
-              </div>
-            )}
-            {emailOrPhone === "phone" && (
-              <div className="phoneNumber">
-                <label htmlFor="phoneNumber">Phone Number : </label>
-                <Field
-                  name="phoneNumber"
-                  type="number"
-                  id="number"
-                  className="@apply px-5 py-1 rounded-lg outline-none border-b-2 cursor-default "
-                  placeholder="Your 10 digits phone number"
-                  onKeyDown={(evt) => evt.key === "e" && evt.preventDefault()}
-                />
-                <ErrorMessage name="phoneNumber" />
-              </div>
-            )}
+          {/* <select
+          onClick={(e) => {
+            setEmailOrPhone(e.target.value);
+          }}
+          className="px-5 py-2 border-2 rounded-lg"
+        >
+          <option value="email" className="px-5 py-2 w-[150px] bg-red-500">Email</option>
+          <option value="phone">Phone Number </option>
+        </select> */}
 
-            <div className="password">
+          <button
+            role="email option"
+            className={`${emailOrPhoneNumberStyles} `}
+            onClick={() => setEmailOrPhone("email")}
+          >
+            <AiOutlineMail />
+            Email{" "}
+          </button>
+          <button
+            role="phone number"
+            className={`${emailOrPhoneNumberStyles} `}
+            onClick={() => setEmailOrPhone("phone")}
+          >
+            <AiOutlinePhone />
+            Phone Number
+          </button>
+        </div>
+
+        {/* //actual form */}
+        <div
+          aria-label="form container"
+          className={`${""} w-full h-auto flex items-center justify-center gap-5 py-2 flex-col `}
+        >
+          <Formik
+            onSubmit={onSubmit}
+            validationSchema={validationSchema}
+            initialValues={initialValues}
+          >
+            <Form className="flex flex-col items-start justify-center gap-10 text-xl font-bold ">
+              {emailOrPhone === "email" && (
+                <div className="email flex flex-col      items-center justify-center gabarito gap-2">
+                  <div
+                    aria-label="input and error message"
+                    className={`${""} email flex items-center justify-center gabarito gap-2`}
+                  >
+                    <Field
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="@apply px-5 py-1  outline-none  cursor-default bg-transparent text-white border-b-2"
+                      component="input"
+                      autoFocus
+                      placeholder="Enter Your Eamil..."
+                    />
+                  </div>
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 "
+                  />
+                </div>
+              )}
+              {emailOrPhone === "phone" && (
+                <div className="password flex flex-col items-center justify-center gabarito gap-2">
+                  <div
+                    aria-label="input and error message"
+                    className={`${""} email flex items-center justify-center gabarito gap-2`}
+                  >
+                    {/* <label htmlFor="phoneNumber" className="text-white">
+                    Phone No:{" "}
+                  </label> */}
+                    <Field
+                      name="phoneNumber"
+                      type="number"
+                      id="number"
+                      className="@apply bg-blue-500 py-1  outline-none  cursor-default bg-transparent text-black border-b-2 "
+                      autoFocus
+                      placeholder="Your phone number"
+                      onKeyDown={(evt) =>
+                        evt.key === "e" && evt.preventDefault()
+                      }
+                    />
+                  </div>
+                  <ErrorMessage
+                    name="phoneNumber"
+                    component="div"
+                    className="text-red-500 "
+                  />
+                </div>
+              )}
+
+              {/* <div className="password">
               <label htmlFor="password">Password : </label>
               <Field
                 name="password"
@@ -252,19 +301,43 @@ const SignIn = ({}) => {
                 className="@apply px-5 py-1 rounded-lg outline-none border-b-2 cursor-default "
               />
               <ErrorMessage name="password" />
-            </div>
-            <button
-              type="submit"
-              role="actual sign in button"
-              className={`${""} border-2 px-5 py-2 `}
-            >
-              Sign In
-            </button>
-          </Form>
-        </Formik>
+            </div> */}
+              <div
+                aria-label="submit button container"
+                className={`${""} w-full h-auto flex items-center justify-center gap-5 `}
+              >
+                <button
+                  type="submit"
+                  role="actual sign in button"
+                  className={`${""}  shadow-lg border-b-2 border-gray-300 rounded-lg   font-bold w-auto px-5 py-2 duration-600 flex items-center justify-center gap-3 bg-white text-white`}
+                  style={{ backgroundImage: "url('/signInImage.png')" }}
+                >
+                  <div
+                    aria-label="icon"
+                    className={`${""}  text-lg text-green-500 font-bold`}
+                  >
+                    <LiaSignOutAltSolid />
+                  </div>
+                  Sign In
+                </button>
+              </div>
+            </Form>
+          </Formik>
+        </div>
       </div>
-
-      {/* // sign in button */}
+      {/* // right side */}
+      <div
+        aria-label="right side"
+        className={`${""} w-[50%] h-full flex items-center justify-center gap-5 flex-col bg-green-500 `}
+        style={{ backgroundImage: "url('/signInImage.png')" }}
+      >
+        <div
+          aria-label="welcome text"
+          className={`${""} w-full h-full flex items-center justify-center gap-5 text-5xl font-bold text-white`}
+        >
+          Welcome Back!
+        </div>
+      </div>
     </div>
   );
 };

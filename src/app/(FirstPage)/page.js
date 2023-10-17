@@ -14,7 +14,11 @@ const FirstPage = () => {
   //   "🚀 ~ file: page.js:12 ~ constshowSignInComponentBoolean_selector=useSelector ~ showSignInComponentBoolean_selector:",
   //   showSignInComponentBoolean_selector
   // );
-  return <div>{showSignInComponentBoolean_selector && <SignIn />}</div>;
+  return (
+    <div className="w-full h-full flex items-center justify-center gap-5 ">
+      {showSignInComponentBoolean_selector && <SignIn />}
+    </div>
+  );
 };
 
 export default FirstPage;

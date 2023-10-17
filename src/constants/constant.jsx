@@ -1,79 +1,88 @@
 // localhost:3000/dashboard/design button
 // all the designs of the design button in the sidebar on the dashboard page , the complete information is here
-export const designsInfo = [
-  {
-    id: 1,
-    state: true,
-    image:
-      "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
-    details:
-      "1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
-  },
-  {
-    id: 2,
-    state: true,
-    image:
-      "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
-    details:
-      "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
-  },
-  {
-    id: 3,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 4,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 5,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 6,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 7,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 8,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 9,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 10,
-    state: true,
-    image: "",
-    details: " ",
-  },
-  {
-    id: 11,
-    state: true,
-    image:
-      "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
-    details:
-      "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
-  },
-];
+// export const designsInfo = [
+//   {
+//     id: 1,
+//     state: true,
+//     image:
+//       "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+//     details:
+//       "1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+//   },
+//   {
+//     id: 2,
+//     state: true,
+//     image:
+//       "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+//     details:
+//       "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+//   },
+//   {
+//     id: 3,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 4,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 5,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 6,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 7,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 8,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 9,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 10,
+//     state: true,
+//     image: "",
+//     details: " ",
+//   },
+//   {
+//     id: 11,
+//     state: true,
+//     image:
+//       "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+//     details:
+//       "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+//   },
+// ];
+
+import { AiOutlineAntDesign } from "react-icons/ai";
+import { BiSupport } from "react-icons/bi";
+import { MdOutlineDesignServices, MdOutlinePreview } from "react-icons/md";
+import { MdCreate } from "react-icons/md";
+import { IoCreateSharp } from "react-icons/io";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { FiUsers } from "react-icons/fi";
+// import { BiSupport } from "react-icons/bi";
 
 // localhost:3000/dashboard/
 
@@ -82,7 +91,7 @@ export const designsInfo = [
 export const sidebarButtonsUser = [
   {
     id: 1,
-    label: "Designs",
+    label: "All Designs",
     name: "designs",
   },
   {
@@ -97,7 +106,7 @@ export const sidebarButtonsUser = [
   },
   {
     id: 4,
-    label: "Support",
+    label: "Need Support",
     name: "support",
   },
 ];
@@ -105,47 +114,56 @@ export const sidebarButtonsUser = [
 export const sidebarButtonsDesigner = [
   {
     id: 1,
-    label: "Designs",
+    label: "All Designs",
     name: "designs",
+    icon: <AiOutlineAntDesign />,
   },
 
   {
     id: 2,
     label: "Create a Design",
     name: "createADesign",
+    // icon: <IoCreateSharp />,
+    icon: <MdCreate />,
   },
   {
     id: 3,
     label: "Your Designs",
     name: "yourDesigns",
+    icon: <MdOutlineDesignServices />,
   },
   {
     id: 4,
-    label: "Support",
+    label: "Need Support",
     name: "support",
+    icon: <BiSupport />,
   },
 ];
 
 export const sidebarButtonsAdmin = [
   {
     id: 1,
-    label: "Designs",
+    label: "All Designs",
     name: "designs",
+    icon: <AiOutlineAntDesign />,
   },
   {
     id: 2,
-    label: "Users",
+    label: "All Users",
     name: "adminUsers",
+    icon: <FiUsers />,
   },
   {
     id: 3,
     label: "Review Designs",
     name: "reviewDesigns",
+    icon: <MdOutlinePreview />,
   },
   {
     id: 4,
-    label: "Payments",
+    label: "Manage Payments",
     name: "adminPayments",
+    icon: <FaRegMoneyBillAlt />,
   },
 ];
 
@@ -395,4 +413,17 @@ export const countryOptions = [
   { value: "YE", label: "Yemen" },
   { value: "ZM", label: "Zambia" },
   { value: "ZW", label: "Zimbabwe" },
+];
+
+export const designReviewEachButtons = [
+  {
+    id: 1,
+    label: "Approve",
+    name: "approve",
+  },
+  {
+    id: 2,
+    label: "Decline  ",
+    name: "decline",
+  },
 ];

@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 
-const Model = ({ children, action, _width = "40%"}) => {
+const Model = ({ children, action, _width = "auto", _height = "auto" }) => {
   console.log("🚀 ~ file: Model.jsx:8 ~ Model ~ action:", action);
   const dispatch = useDispatch();
   const router = useRouter();
@@ -22,15 +22,15 @@ const Model = ({ children, action, _width = "40%"}) => {
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center gap-5 absolute top-0 left-0 z-[20] ">
+    <div className="w-full h-full flex items-center justify-center gap-5 absolute top-0 left-0 z-[20]  ">
       <div
         aria-label="model"
-        className={`${""} w-full h-full flex items-center justify-center gap-5 absolute top-0 left-0 z-[21] bg-gray-200 opacity-70`}
+        className={`${""} w-full h-full flex items-center justify-center gap-5 absolute top-0 left-0 z-[21] bg-gray-700 opacity-70`}
       ></div>
       <div
         aria-label="model"
-        className={`${""} h-[95%] flex items-center justify-center gap-5 absolute bg-white z-[22] rounded-lg flex-col`}
-        style={{width : _width}}
+        className={`${""} h-[95%] flex items-center justify-center gap-5 absolute bg-white z-[22] rounded-lg flex-col p-3 shadow-lg shadow-gray-700 `}
+        style={{ width: _width, height: _height }}
       >
         {children}
         {/* <div aria-label="image container" className={`${""} `}>
@@ -56,7 +56,7 @@ const Model = ({ children, action, _width = "40%"}) => {
         {/* // following div is for the cross button and is absolutely positioned */}
         <div
           aria-label="cross button"
-          className={`${""} w-auto h-auto flex items-center justify-center gap-5 p-3 absolute top-2 right-2 font-bold text-2xl cursor-pointer`}
+          className={`${""} w-auto h-auto flex items-center justify-center gap-5 p-1 absolute top-2 right-2 font-bold text-2xl cursor-pointer bg-purple-200 rounded-full text-purple-600`}
           onClick={() => {
             if (isThisReactStateSetter) {
               action((prev) => false);

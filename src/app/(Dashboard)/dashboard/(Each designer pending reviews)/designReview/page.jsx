@@ -7,6 +7,7 @@ import { GrView } from "react-icons/gr";
 import { useSelector } from "react-redux";
 import styles from "./reviewDesigns.module.css";
 import DesignCard from "@/sections/dashboard/rightSide/mainContainer/DesignCard";
+import { usePathname } from "next/navigation";
 
 const FirstPage = ({ searchParams }) => {
   const [designerDetailsBoolean, setDesignerDetailsBoolean] = useState(false);
@@ -14,6 +15,9 @@ const FirstPage = ({ searchParams }) => {
     useState(false);
 
   const { id } = searchParams;
+  const pathname = usePathname();
+  console.log("🚀 ~ file: page.jsx:19 ~ FirstPage ~ pathname:", pathname);
+
   console.log("🚀 ~ file: page.jsx:5 ~ FirstPage ~ id:", id);
 
   const adminPendingReviewsData_selector = useSelector((state) => {
@@ -44,6 +48,8 @@ const FirstPage = ({ searchParams }) => {
   //   finalPendingDesignsPerDesigner
   // );
   const { designs, userDetails, id: cardId } = finalData;
+
+  const { id: userId } = userDetails;
 
   return (
     <div
@@ -90,16 +96,18 @@ const FirstPage = ({ searchParams }) => {
             </div>
           </div>
 
-          <button
-            role="review"
-            className={`${""} border-2 px-5 py-2 `}
-            onClick={() => {
-              setReviewPerDesigner(true);
-              router.push(`/dashboard/designReview?id=${id}`);
-            }}
-          >
-            Review
-          </button>
+          {pathname === "/dashboard/design" && (
+            <button
+              role="review"
+              className={`${""} border-2 px-5 py-2 `}
+              onClick={() => {
+                setReviewPerDesigner(true);
+                router.push(`/dashboard/designReview?id=${id}`);
+              }}
+            >
+              Review
+            </button>
+          )}
         </div>
         {designerDetailsBoolean && (
           <Model action={setDesignerDetailsBoolean} _width="30%">
@@ -121,10 +129,9 @@ const FirstPage = ({ searchParams }) => {
           return (
             <DesignCard
               design={design}
-              cameFrom="cameFromPreviewDesign"
-              cardId={cardId}
-              userId={userDetails.id}
               designId={design.id}
+              userId={userId}
+              cardId={cardId}
             />
           );
         })}

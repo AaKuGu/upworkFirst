@@ -47,6 +47,183 @@ export const showModelBoolean_reducer = createReducer(false, (builder) => {
     .addDefaultCase((state) => state);
 });
 
+// localhost:3000/dashboard/designs / all designs
+// following redux state will store all the designs data
+export const designsInfo_reducer = createReducer(
+  [
+    {
+      name: "Abstract",
+      likesCount: "233",
+      designId: "djfksje9389384",
+      state: true,
+      image: "/tempDesignImages/one.png",
+      details:
+        "1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "man",
+    },
+    {
+      name: "Pal",
+      designId: 2,
+      state: true,
+      image: "/tempDesignImages/two.png",
+      likesCount: "23",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "bird",
+    },
+    {
+      name: "Pal",
+      designId: 3,
+      likesCount: "33",
+      state: true,
+      image: "/tempDesignImages/three.png",
+      details: " ",
+      category: "man",
+    },
+
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/four.png",
+      name: "Game",
+      likesCount: "23",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/five.png",
+      name: "Pal",
+      likesCount: "238",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/one.png",
+      name: "Pal",
+      likesCount: "1233",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/two.png",
+      name: "Pal",
+      likesCount: "73",
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/three.png",
+      name: "Pal",
+      likesCount: "283",
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/four.png",
+      name: "Pal",
+      likesCount: "3",
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/five.png",
+      name: "Pal",
+      likesCount: "33",
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/one.png",
+      name: "Pal",
+      likesCount: "43",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/two.png",
+      name: "Pal",
+      likesCount: "30",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/three.png",
+      name: "Pal",
+      likesCount: "2033",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/four.png",
+      name: "Pal",
+      likesCount: "77",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+    {
+      designId: 11,
+      state: true,
+      image: "/tempDesignImages/five.png",
+      name: "Pal",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
+    },
+  ],
+  (builder) => {
+    // console.log(
+    //   "🚀 ~ file: reducer.js:13 ~ constshowSignInComponentBoolean_reducer=createReducer ~ showSignInComponentBoolean_reducer:",
+    //   showSignInComponentBoolean_reducer
+    // );
+
+    builder
+      .addCase("designsInfo_action", (state, { payload }) => {
+        return (state = payload);
+      })
+
+      .addDefaultCase((state) => state);
+  }
+);
 // export const showModelDesignerCreateBoolean_reducer = createReducer(
 //   false,
 //   (builder) => {
@@ -89,6 +266,21 @@ export const selectedDesignCardInfo_reducer = createReducer(
       .addDefaultCase((state) => state);
   }
 );
+
+// localhost:3000/dashboard/designs/model pop up/design route
+// following function is to set the loved design or not loved design
+export const loveReactPerDesign_reducer = createReducer(false, (builder) => {
+  // console.log(
+  //   "🚀 ~ file: reducer.js:13 ~ constshowSignInComponentBoolean_reducer=createReducer ~ showSignInComponentBoolean_reducer:",
+  //   showSignInComponentBoolean_reducer
+  // );
+
+  builder
+    .addCase("selectedDesignCardInfo_action", (state, { payload }) => {
+      return (state = payload);
+    })
+    .addDefaultCase((state) => state);
+});
 
 // localhost:3000/dashboard/sidebar
 // following state will select among the designs, purchased designs,payments and support buttons
@@ -161,50 +353,72 @@ export const purchasedDesignsData_reducer = createReducer(
 
 // localhost:3000/dashboard/createADesign
 // following will have the data which the user will designer will create on the createADesign page
-export const createADesignData_reducer = createReducer({}, (builder) => {
-  // console.log(
-  //   "🚀 ~ file: reducer.js:13 ~ constshowSignInComponentBoolean_reducer=createReducer ~ showSignInComponentBoolean_reducer:",
-  //   showSignInComponentBoolean_reducer
-  // );
-
-  builder
-    .addCase("createADesignData_action", (state, { payload }) => {
-      return (state = payload);
-    })
-    .addDefaultCase((state) => state);
-});
+export const createADesignData_reducer = createReducer(
+  {
+    category: "",
+    desc: "",
+    designImage: "",
+    designFiles: "",
+    userId: "",
+  },
+  (builder) => {
+    // console.log(
+    //   "🚀 ~ file: reducer.js:13 ~ constshowSignInComponentBoolean_reducer=createReducer ~ showSignInComponentBoolean_reducer:",
+    //   showSignInComponentBoolean_reducer
+    // );
+    builder
+      .addCase("createADesignData_action", (state, { payload }) => {
+        return (state = payload);
+      })
+      .addDefaultCase((state) => state);
+  }
+);
 
 // localhost:3000/dashboard/Your designs
 // following will have the approved designs compolete details by the admin,
 export const designerApprovedDesignsData_reducer = createReducer(
   [
     {
-      id: 1,
+      name: "Abstract",
+      likesCount: "233",
+      designId: "djfksje9389384",
       state: true,
-      image:
-        "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+      image: "/tempDesignImages/one.png",
       details:
         "1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "man",
     },
     {
-      id: 2,
+      name: "Pal",
+      designId: 2,
       state: true,
-      image:
-        "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+      image: "/tempDesignImages/two.png",
+      likesCount: "23",
+
       details:
         "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "bird",
     },
     {
-      id: 3,
+      name: "Pal",
+      designId: 3,
+      likesCount: "33",
       state: true,
-      image: "",
+      image: "/tempDesignImages/three.png",
       details: " ",
+      category: "man",
     },
+
     {
-      id: 4,
+      designId: 11,
       state: true,
-      image: "",
-      details: " ",
+      image: "/tempDesignImages/four.png",
+      name: "Game",
+      likesCount: "23",
+
+      details:
+        "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "women",
     },
   ],
   (builder) => {
@@ -220,32 +434,25 @@ export const designerApprovedDesignsData_reducer = createReducer(
 export const designerPendingDesignsData_reducer = createReducer(
   [
     {
-      id: 1,
+      name: "Abstract",
+      likesCount: "233",
+      designId: "djfksje9389384",
       state: true,
-      image:
-        "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+      image: "/tempDesignImages/one.png",
       details:
         "1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
+      category: "man",
     },
     {
-      id: 2,
+      name: "Pal",
+      designId: 2,
       state: true,
-      image:
-        "https://cdn.pixabay.com/photo/2023/10/06/07/06/girl-8297585_1280.png",
+      image: "/tempDesignImages/two.png",
+      likesCount: "23",
+
       details:
         "2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo sed sapien bibendum laoreet. Nulla facilisi. Aenean accumsan tincidunt leo, eget convallis odio accumsan in. Suspendisse vel tortor non sapien facilisis tincidunt. Mauris at diam in nisl lacinia aliquet. Vestibulum feugiat purus sed mauris bibendum, id scelerisque urna lacinia. Vivamus ac lorem ut sapien condimentum tincidunt. Sed quis tellus a urna tempus pellentesque. Donec placerat, odio sit amet eleifend iaculis, ipsum augue pretium nisl, non elementum libero libero in eros. Etiam a tortor quam. Vivamus sit amet diam ac orci interdum iaculis.",
-    },
-    {
-      id: 3,
-      state: true,
-      image: "",
-      details: " ",
-    },
-    {
-      id: 4,
-      state: true,
-      image: "",
-      details: " ",
+      category: "bird",
     },
   ],
   (builder) => {
@@ -353,7 +560,7 @@ export const adminPendingReviewsData_reducer = createReducer(
   ],
   (builder) => {
     builder
-      .addCase("designerPendingDesignsData_action", (state, { payload }) => {
+      .addCase("adminPendingReviewsData_action", (state, { payload }) => {
         return (state = payload);
       })
       .addDefaultCase((state) => state);
@@ -372,6 +579,20 @@ export const createAUserData_reducer = createReducer(
       .addDefaultCase((state) => state);
   }
 );
+
+// localhost:3000/dashboard/admin/review design
+//following will be storing the data of the particular design , which admin chose to review, this is because, when the router is /dashboard/designReview/designReviewEach?userId,DesignId,cardId, so on that page i dont need to run teh query agian to find which post is that , since the data will be already stored from /dashboard/designReview hence dont need to query again on this page, and deletion will be performed using cardid, userid, and designId
+// export const adminChooseDesignReview_reducer = createReducer(
+//   {},
+
+//   (builder) => {
+//     builder
+//       .addCase("adminChooseDesignReview_action", (state, { payload }) => {
+//         return (state = payload);
+//       })
+//       .addDefaultCase((state) => state);
+//   }
+// );
 
 // localhost:3000/dashboard/users/create a user, will be used for the backend, not now
 export const updateAUserData_reducer = createReducer({}, (builder) => {
@@ -401,12 +622,33 @@ export const updateAUserData_reducer = createReducer({}, (builder) => {
 // user details if here is logged in
 export const loggedInUserDetails_reducer = createReducer(
   {
+    id: 6,
     role: "admin",
     name: "Admin",
     phoneNumber: 3333333333,
     password: "3333333333",
+    country: "India",
     email: "admin@gmail.com",
+    state: "Himanchar Pradesh",
+    city: "Mirzapur",
   },
+  (builder) => {
+    // console.log(
+    //   "🚀 ~ file: reducer.js:13 ~ constshowSignInComponentBoolean_reducer=createReducer ~ showSignInComponentBoolean_reducer:",
+    //   showSignInComponentBoolean_reducer
+    // );
+
+    builder
+      .addCase("loggedInUserDetails_action", (state, { payload }) => {
+        return (state = payload);
+      })
+      .addDefaultCase((state) => state);
+  }
+);
+
+export const loggedInUserId_reducer = createReducer(
+  "skdfwekfskfks39403940",
+
   (builder) => {
     // console.log(
     //   "🚀 ~ file: reducer.js:13 ~ constshowSignInComponentBoolean_reducer=createReducer ~ showSignInComponentBoolean_reducer:",

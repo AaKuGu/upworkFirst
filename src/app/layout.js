@@ -5,9 +5,11 @@ import "@/app/globals.css";
 import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import { useState } from "react";
-import SignInButton from "@/sections/ParentLayout/SignInOrOutButton";
 import { Toaster } from "react-hot-toast";
 import Role from "@/sections/firstPage/Role";
+import { BiLogoDigitalocean } from "react-icons/bi";
+import SignInOrOutButton from "@/sections/ParentLayout/SignInOrOutButton";
+import { AiOutlineAntDesign } from "react-icons/ai";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,30 +33,48 @@ export default function RootLayout({ children }) {
         >
           <div
             aria-label="header"
-            className={`${""} w-full h-[10%] flex items-center justify-between gap-5 py-2 px-5 border-[1px] border-gray-400 relative`}
+            className={`${""} w-full h-[12%] flex items-center justify-between gap-5 py-2 px-5  border-gray-400 relative shadow-md shadow-purple-200 `}
           >
             <div
               aria-label="logo"
-              className={`${""} w-[200px] h-full flex items-center justify-center gap-5 `}
+              className={`${""} w-[200px] h-[90%] flex items-center justify-center gap-5 text-3xl text-gray-700   rounded-2xl`}
             >
-              Logo
+              <div
+                aria-label=""
+                className={`${""} w-auto h-auto text-xl text-blue-500`}
+              >
+                <BiLogoDigitalocean />
+              </div>
+
+              <div aria-label="title" className={`${""} gabarito`}>
+                Logo
+              </div>
             </div>
             <div
               aria-label="right side"
               className={`${""} w-auto h-full flex items-center justify-center gap-5 `}
             >
-              <div aria-label="role" className={`${""} `}>
+              <div
+                aria-label="role"
+                className={`${""} w-auto h-auto flex items-center justify-center gap-5  bg-gray-200 px-5 py-2 rounded-lg`}
+              >
+                <div
+                  aria-label=""
+                  className={`${""} w-auto h-auto text-xl text-blue-500`}
+                >
+                  <AiOutlineAntDesign />
+                </div>
                 <Role />
               </div>
               <div aria-label="signInButton container" className={`${""} `}>
-                <SignInButton />
+                <SignInOrOutButton />
               </div>
             </div>
             <Toaster />
           </div>
           <div
             aria-label="main"
-            className={`${""} w-full h-[90%] flex items-center justify-center gap-5 flex-col border-[1px] border-gray-400`}
+            className={`${""} w-full h-[88%] flex items-center justify-center gap-5 flex-col border-[1px] border-gray-400`}
           >
             {children}
           </div>

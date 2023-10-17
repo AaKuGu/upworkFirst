@@ -9,7 +9,14 @@ const Role = () => {
 
   const { role } = loggedInUserDetails_selector;
 
-  return <div>{role.charAt(0).toUpperCase() + role.slice(1)}</div>;
+  return (
+    <div
+      className="font-bold text-lg roboto text-gray-700 font"
+      // style={{ textShadow: "2px 2px 4px blue" }}
+    >
+      {role.charAt(0).toUpperCase() + role.slice(1)}
+    </div>
+  );
 };
 
 export default Role;

@@ -21,10 +21,10 @@ const ApprovedDesigns = () => {
     >
       <div
         aria-label="pending approval number container"
-        className={`${""} w-full h-[10%] flex items-center justify-between px-10 gap-5 `}
+        className={`${""} w-full h-[10%] flex items-center justify-start px-10 gap-5 `}
       >
-        <div aria-label="title" className={`${""} `}>
-          Approved Designs
+        <div aria-label="title" className={`${""}  text-blue-500`}>
+          Approved Designs : 
         </div>
         <div aria-label="pending approval number" className={`${""} `}>
           {approvedDesignsNumber}

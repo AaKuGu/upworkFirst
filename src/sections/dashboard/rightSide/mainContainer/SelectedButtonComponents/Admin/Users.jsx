@@ -5,6 +5,8 @@ import UserCard from "./UserCard";
 import UserContainerComponent from "./UserContainerComponent";
 import Model from "@/sections/dashboard/model/Model";
 import CreateUserFormik from "./CreateUser/CreateUserFormik";
+import { AiOutlineUserSwitch } from "react-icons/ai";
+import { FcBusinessman } from "react-icons/fc";
 
 const Users = ({ title }) => {
   const [whichUser, setWhichUser] = useState("normalUsers");
@@ -42,11 +44,13 @@ const Users = ({ title }) => {
       id: 1,
       name: "normalUsers",
       label: "Normal Users",
+      icon: <AiOutlineUserSwitch />,
     },
     {
       id: 2,
       name: "designerUsers",
       label: "Designer Users",
+      icon: <FcBusinessman />,
     },
   ];
 
@@ -81,7 +85,7 @@ const Users = ({ title }) => {
       >
         <button
           role="create a user "
-          className={`${""} border-2 px-5 py-2 `}
+          className={`${""}  shadow-lg border-b-2 border-gray-300 rounded-lg  text-gray-700 font-bold w-auto px-5 py-2 duration-600 flex items-center justify-center gap-3 bg-white`}
           onClick={() => {
             setCreateUserModelBoolean(true);
           }}
@@ -98,13 +102,27 @@ const Users = ({ title }) => {
                 role={user.name + "button"}
                 className={`${
                   user.name === whichUser && "bg-gray-200"
-                } border-2 px-5 py-2 hover:bg-gray-300`}
+                } border-2 bg-gray-200 hover:bg-gray-300 rounded-lg px-5 py-2 duration-100 w-auto h-fit flex items-center justify-center gap-5 `}
+                // className={`${
+                //   whichButton === btn.name && "border-2 border-purple-600"
+                // } bg-gray-200 hover:bg-gray-300 rounded-lg px-5 py-3 duration-100 w-auto h-fit flex items-center justify-center gap-5  `}
                 key={i}
                 onClick={() => {
                   setWhichUser(user.name);
                 }}
               >
-                {user.label}
+                <div
+                  aria-label="icon"
+                  className={`${""} text-3xl text-blue-600`}
+                >
+                  {user.icon}
+                </div>
+                <div
+                  aria-label="label"
+                  className={`${""} font-bold text-gray-700 `}
+                >
+                  {user.label}
+                </div>
               </button>
             );
           })}

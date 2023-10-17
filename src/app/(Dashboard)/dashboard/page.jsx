@@ -1,3 +1,7 @@
+/* The code is a React component named `FirstPage`. It imports various components and hooks from
+different files and libraries. It uses the `useSelector` hook from `react-redux` to access the state
+of the application and retrieve the `name` property from the `sidebarSelectedButton_reducer` slice
+of the state. */
 "use client";
 
 import Model from "@/sections/dashboard/model/Model";
@@ -17,6 +21,11 @@ import ReviewDesigns from "@/sections/dashboard/rightSide/mainContainer/Selected
 const FirstPage = () => {
   const dispatch = useDispatch();
 
+  /* The code `const sidebarSelectedButton_selector = useSelector((state) => {
+      const { sidebarSelectedButton_reducer } = state;
+      return sidebarSelectedButton_reducer;
+    });` is using the `useSelector` hook from the `react-redux` library to access the state of the
+  application and retrieve the `sidebarSelectedButton_reducer` slice of the state. */
   const sidebarSelectedButton_selector = useSelector((state) => {
     const { sidebarSelectedButton_reducer } = state;
     return sidebarSelectedButton_reducer;

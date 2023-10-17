@@ -17,6 +17,9 @@ import {
   updateAUserData_reducer,
   // showModelDesignerCreateBoolean_reducer,
   adminPendingReviewsData_reducer,
+  adminChooseDesignReview_reducer,
+  designsInfo_reducer,
+  loggedInUserId_reducer,
 } from "./reducer";
 
 export const store = configureStore({
@@ -36,5 +39,8 @@ export const store = configureStore({
     updateAUserData_reducer,
     // showModelDesignerCreateBoolean_reducer,
     adminPendingReviewsData_reducer,
+    adminChooseDesignReview_reducer,
+    designsInfo_reducer,
+    loggedInUserId_reducer,
   },
 });

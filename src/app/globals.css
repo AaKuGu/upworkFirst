@@ -2,23 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400&display=swap");
+
+.gabarito {
+  font-family: "Gabarito", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
 ::-webkit-scrollbar {
-  width: 1px; /* Set the desired width */
-  height : 10px;
+  width: 5px; /* Set the desired width */
+  height: 10px;
   border-radius: 10px;
 }
 
 /* Customize the track (the area the scrollbar moves on) */
 ::-webkit-scrollbar-track {
-  background: blue; /* You can change the background color */
-  height : 2px;
+  background: gray; /* You can change the background color */
+  height: 2px;
   border-radius: 10px;
 }
 
 /* Customize the thumb (the draggable scrollbar handle) */
 ::-webkit-scrollbar-thumb {
-  background: green; /* You can change the thumb color */
+  background: purple; /* You can change the thumb color */
   width: 2px;
-  height : 2px;
+  height: 2px;
   border-radius: 10px;
 }
